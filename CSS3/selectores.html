@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+    <style>
+        /*Seleccionamos aquellos enlaces cuyo href comience por nov*/
+        /*a{ color:red;}*/
+        a[href^="#nov"]{color:red}
+
+        /*Seleccionamos aquellos enlaces cuyo href termine por tas*/
+        a[href$="tas"] {font-size: 24px;}
+
+        /*Seleccionamos aquellos enlaces cuyo href contenga ini*/
+        a[href*="ini"] {text-decoration: line-through;}
+
+        /*Seleccionamos la primera letra de los parrafos*/
+        p::first-letter {font-size: 52px;}
+
+        /*Seleccionamos la primera linea de los parrafos*/
+        p::first-line {color:green;}
+
+        /*Seleccionamos el texto seleccionado de los parrafos*/
+        p::selection {background: royalblue; color white;}
+
+    </style>
+</head>
+<body>
+
+ <nav>
+     <a href="#novedades">Novedades</a>
+     <a href="#entrevistas">Entrevistas</a>
+     <a href="#opinion">Articulos de opinión</a>
+     <!--Parrafo-->
+     <p>Lorem ipsum dolor sit amet, consectetur </p>
+
+ </nav>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation</title>
+</head>
+<body>
+
+ <script>
+
+     //Comprobamos la API de Geolocalizacion
+     if (navigator.geolocation){
+
+         //Obtener la posicion
+         navigator.geolocation.getCurrentPosition (
+
+          //Si fue correcto
+          function(data){
+              //Obtenemos las coordenadas
+              window.console.log("Latitud: " + data.coords.latitude);
+              window.console.log("Longitud: " + data.coords.longitude);
+          },
+          //Si algo fue mal o el usuario no autoriza
+          function(){
+
+          }
+
+         );
+
+     }
+
+
+ </script>
+
+</body>
+</html>
