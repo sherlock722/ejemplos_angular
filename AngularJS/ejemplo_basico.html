@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Básico</title>
+</head>
+
+<!-- Se utiliza la directiva ng-app para indicar que este elemento es la
+aplicacion-->
+<body ng-app>
+
+
+    <!--Pintamos una caja de texto-->
+    <input type="text" ng-model="nombre"/>
+
+    <!--Pintamos un mensaje de bienvenida-->
+    <p>Bienvenido/a {{nombre}}</p>
+
+    <!--Pinto un mensaje de despedida-->
+    <p ng-bind="nombre"></p>
+
+    <!--Cargamos la libreria de angularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js">
+    </script>
+
+
+</body>
+</html>
