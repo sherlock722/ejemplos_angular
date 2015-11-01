@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Binding</title>
+</head>
+<body ng-app="test">
+
+    <!--Pruebas de two-way data binding one-time binding-->
+    <div ng-controller="Sincronizacion">
+
+        <!-- Ejemplo two-way data binding-->
+        <p>Ejemplo de two-way databinding</p>
+        <input type="text" ng-model="twowaydatabinding.nombre"/>
+        <span>Buenas noches {{twowaydatabinding.nombre}}</span>
+
+        <!-- Ejemplo one-time data binding-->
+        <p>Ejemplo de one-time binding</p>
+        <input type="text" ng-model="onetimebinding.nombre"/>
+        <span>Buenas noches {{::onetimebinding.nombre}} y
+            el valor es:{{onetimebinding.valornumerico}}</span>
+
+        <!--Ejemplo de ngModelOptions-->
+        <p>Ejemplo de ngModelOptions</p>
+
+        <!--Ejemplo de updateOn-->
+        <input type="text" ng-model="ngModelOptionsModel.nombre"
+               ng-model-options="{updateOn:'blur'}"/>
+        <span>Buenas noches {{ngModelOptionsModel.nombre}}</span>
+
+        <!--Ejemplo de debounce-->
+        <input type="text" ng-model="ngModelOptionsModel.mascota"
+               ng-model-options="{debounce: 3000}"/>
+        <span>Tu mascota de llama {{ngModelOptionsModel.mascota}}</span>
+
+
+    </div>
+
+    <!--Cargamos la libreria de angularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+    <script>
+
+        //Creo una aplicacion test
+        angular.module("test",[]);
+
+        angular.module("test").controller("Sincronizacion", function ($scope){
+
+            //Ejemplo two-way data binding y one-time binding
+            //Creamos los objetos vacios
+            $scope.twowaydatabinding={};
+            $scope.onetimebinding={
+                valornumerico:8
+            };
+
+            //Ejemplo ngModelOptionsModel
+            $scope.ngModelOptionsModel={};
+
+            //Ejemplo de $watch. Atienden una expresion y actuan cuando el valor cambia
+            $scope.$watch(
+                    function (){return $scope.onetimebinding.nombre},
+                    function (value){ if (value) {window.console.log(value);}}
+            );
+        });
+
+    </script>
+
+</body>
+</html>
