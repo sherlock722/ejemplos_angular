@@ -43,7 +43,7 @@
         //con propiedad $inject
 
         var controlador=function ($scope,$location){debugger;};
-        controlador.$inject = [$$scope,$location];
+        controlador.$inject = [$scope,$location];
         angular.module("test").controller ("TestCtrl2",controlador);
 
         // Controlador con injeccion de dependencias
